@@ -54,7 +54,7 @@ defmodule AshManyMany.MixProject do
       {:ash, "~> 2.17.17"},
       {:ash_postgres, "~> 1.3.6"},
       {:ash_phoenix, "~> 1.2.24"},
-      {:ash_admin, "~> 0.10.0"},
+      {:ash_admin, "~> 0.10.1"},
     ]
   end
 
