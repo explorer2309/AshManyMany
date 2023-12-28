@@ -5,6 +5,21 @@ defmodule AshManyMany.Accounts.Organisation do
   postgres do
     table "organisations"
     repo AshManyMany.Repo
+
+    manage_tenant do
+      template(["org_", :id])
+    end
+  end
+
+  multitenancy do
+    strategy(:attribute)
+    attribute(:id)
+    global?(true)
+    parse_attribute({__MODULE__, :tenant, []})
+  end
+
+  def tenant("org_" <> tenant) do
+    tenant
   end
 
   actions do
@@ -41,5 +56,7 @@ defmodule AshManyMany.Accounts.Organisation do
       source_attribute_on_join_resource :organisation_id
       destination_attribute_on_join_resource :user_id
     end
+
+    has_many(:members, AshManyMany.Accounts.Member, destination_attribute: :organisation_id)
   end
 end

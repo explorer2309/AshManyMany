@@ -40,6 +40,8 @@ defmodule AshManyMany.Accounts.User do
       source_attribute_on_join_resource :user_id
       destination_attribute_on_join_resource :organisation_id
     end
+
+    has_many(:members, AshManyMany.Accounts.Member, destination_attribute: :user_id)
   end
 
   identities do

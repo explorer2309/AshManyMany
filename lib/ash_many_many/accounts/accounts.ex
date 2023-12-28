@@ -15,5 +15,6 @@ defmodule AshManyMany.Accounts do
     resource AshManyMany.Accounts.User
     resource AshManyMany.Accounts.Organisation
     resource AshManyMany.Accounts.UserOrganisation
+    resource AshManyMany.Accounts.Member
   end
 end

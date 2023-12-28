@@ -1,0 +1,48 @@
+{
+  "attributes": [
+    {
+      "default": "fragment(\"uuid_generate_v4()\")",
+      "size": null,
+      "type": "uuid",
+      "source": "id",
+      "references": null,
+      "allow_nil?": false,
+      "generated?": false,
+      "primary_key?": true
+    },
+    {
+      "default": "nil",
+      "size": null,
+      "type": "text",
+      "source": "name",
+      "references": null,
+      "allow_nil?": false,
+      "generated?": false,
+      "primary_key?": false
+    }
+  ],
+  "table": "organisations",
+  "hash": "BAC1AF61C5930E16541883650ABBF1358C7722E26AB7D21E7F4568DAD5638C88",
+  "repo": "Elixir.AshManyMany.Repo",
+  "schema": null,
+  "identities": [
+    {
+      "name": "unique_name",
+      "keys": [
+        "name"
+      ],
+      "index_name": "organisations_unique_name_index",
+      "base_filter": null
+    }
+  ],
+  "multitenancy": {
+    "global": true,
+    "attribute": "id",
+    "strategy": "attribute"
+  },
+  "base_filter": null,
+  "check_constraints": [],
+  "custom_indexes": [],
+  "custom_statements": [],
+  "has_create_action": true
+}
