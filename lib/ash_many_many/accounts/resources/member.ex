@@ -20,7 +20,7 @@ defmodule AshManyMany.Accounts.Member do
   relationships do
     belongs_to :organisation, AshManyMany.Accounts.Organisation do
       api AshManyMany.Accounts
-      writable? true
+      attribute_writable? true
       allow_nil? false
     end
 
